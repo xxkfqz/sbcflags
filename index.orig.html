@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SBC info and compiler cflags table</title>
+        <style>
+            body {
+                text-align: center;
+            }
+
+            table {
+                margin: auto;
+                border: 1px solid;
+                border-collapse: collapse;
+                max-width: 1024px;
+                width: 100%;
+            }
+
+            .ta-left {
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body style="font-family: monospace;">
+        <h1>
+            SBC info and compiler cflags table
+        </h1>
+
+        <h2>
+            Raspberry Pi series
+        </h2>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th width="25%">
+                    SBC Model
+                </th>
+                <th width="5%">
+                    Architecture
+                </th>
+                <th width="15%">
+                    Core
+                </th>
+                <th width="5%">
+                    Bits
+                </th>
+                <th width="10%">
+                    FPU
+                </th>
+                <th width="40%">
+                    CFLAGS
+                </th>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            RPi 1 Model A/A+/B/B+
+                        </li>
+                        <li>
+                            RPi Zero PCB v1.2/v1.3
+                        </li>
+                        <li>
+                            RPi Zero W
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv6Z
+                </td>
+                <td>
+                    ARM1176JZF-S
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    VFPv2
+                </td>
+                <td class="ta-left">
+                    -mcpu=arm1176jzf-s -mfpu=vfpv2 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            RPi 2 Model B
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv7-A
+                </td>
+                <td>
+                    Cortex-A7
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            RPi 2 Model B v1.2
+                        </li>
+                        <li>
+                            RPi 3 Model B/B+
+                        </li>
+                        <li>
+                            RPi 4 Model B
+                        </li>
+                        <li>
+                            RPi Zero 2 W
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A53
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            RPi 400
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A72
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a72 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+        </table>
+
+        <h2>
+            Orange Pi series
+        </h2>
+
+        <table border="1" cellpadding="5">
+            <tr>
+                <th width="25%">
+                    SBC Model
+                </th>
+                <th width="5%">
+                    Architecture
+                </th>
+                <th width="15%">
+                    Core
+                </th>
+                <th width="5%">
+                    Bits
+                </th>
+                <th width="10%">
+                    FPU
+                </th>
+                <th width="40%">
+                    CFLAGS
+                </th>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            OPi Zero 2W
+                        </li>
+                        <li>
+                            OPi Zero 3
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A53
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            OPi 3B
+                        </li>
+                        <li>
+                            OPi 3 Plus
+                        </li>
+                        <li>
+                            OPi Compute Module 4
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8.2-A
+                </td>
+                <td>
+                    Cortex-A55
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a55 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            OPi 5
+                        </li>
+                        <li>
+                            OPi 5B
+                        </li>
+                        <li>
+                            OPi 5 Plus
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8.2-A
+                </td>
+                <td>
+                    Cortex-A76 + Cortex-A55
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a76.cortex-a55 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+        </table>
+
+        <h2>
+            Banana Pi series
+        </h2>
+
+        <table border="1" cellpadding="5">
+            <tr>
+                <th width="25%">
+                    SBC Model
+                </th>
+                <th width="5%">
+                    Architecture
+                </th>
+                <th width="15%">
+                    Core
+                </th>
+                <th width="5%">
+                    Bits
+                </th>
+                <th width="10%">
+                    FPU
+                </th>
+                <th width="40%">
+                    CFLAGS
+                </th>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-P2
+                        </li>
+                        <li>
+                            BPi BPI-P2 Pro
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A35
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a35 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M1
+                        </li>
+                        <li>
+                            BPi BPI-M1+
+                        </li>
+                        <li>
+                            BPi BPI-M2+
+                        </li>
+                        <li>
+                            BPi BPI-M2 Zero
+                        </li>
+                        <li>
+                            BPi BPI-M2 Ultra
+                        </li>
+                        <li>
+                            BPi BPI-M2 Magic
+                        </li>
+                        <li>
+                            BPi BPI-M2 Berry
+                        </li>
+                        <li>
+                            BPi BPI-P2 Zero
+                        </li>
+                        <li>
+                            BPi BPI-M3
+                        </li>
+                        <li>
+                            BPi BPI-F2P
+                        </li>
+                        <li>
+                            BPi BPI-F2S
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv7-A
+                </td>
+                <td>
+                    Cortex-A7
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-F2
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv7-A
+                </td>
+                <td>
+                    Cortex-A9
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    VFPv3 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a9 -mfpu=neon-vfpv3 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M2S
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A73 + Cortex-A53
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a73.cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M2 Pro
+                        </li>
+                        <li>
+                            BPi BPI-M5
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8.2-A
+                </td>
+                <td>
+                    Cortex-A55
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a55 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M4
+                        </li>
+                        <li>
+                            BPi BPI-M4 Zero
+                        </li>
+                        <li>
+                            BPi BPI-M4 Berry
+                        </li>
+                        <li>
+                            BPi BPI-M64
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A53
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M5 Pro
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A72 + Cortex-A53
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a72.cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M6
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8-A
+                </td>
+                <td>
+                    Cortex-A73
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a73 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+            <tr>
+                <td class="ta-left">
+                    <ul>
+                        <li>
+                            BPi BPI-M7
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    ARMv8.2-A
+                </td>
+                <td>
+                    Cortex-A76
+                </td>
+                <td>
+                    64/32
+                </td>
+                <td>
+                    VFPv4 + NEON
+                </td>
+                <td class="ta-left">
+                    -mcpu=cortex-a76 -mfpu=neon-vfpv4 -mfloat-abi=hard
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <div>
+            Contribute on <a href="https://github.com/xxkfqz/socflags">GitHub</a>
+        </div>
+    </body>
+</html>
